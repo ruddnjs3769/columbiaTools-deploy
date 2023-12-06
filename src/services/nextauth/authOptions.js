@@ -1,5 +1,5 @@
 import GoogleProvider from "next-auth/providers/google";
-import { addUser } from "@/service/sanity/user";
+import { addUser } from "@/services/sanity/user";
 
 const authOptions = {
   providers: [

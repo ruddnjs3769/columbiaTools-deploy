@@ -8,17 +8,26 @@ interface IOrderState {
 
 const initialState: IOrderState = {
   orderHistory: {
-    name: { username: "" },
-    status: "결재 대기",
-    receiverName: "",
-    receiverPhone: "",
-    address: "",
-    phone: "",
-    zipCode: "",
-    orderTime: "",
-    totalPrice: 0,
-    deliveryTime: "",
-    products: [],
+    userEmail: "",
+    orderDate: "",
+    orderStatus: "preparing",
+    orderAmount: 0,
+    orderCount: 0,
+    cartItems: [],
+    billingAddress: {
+      userEmail: "",
+      memo: "",
+      name: "",
+      phone: "",
+    },
+    shippingAddress: {
+      postalCode: "",
+      city: "",
+      line: "",
+      name: "",
+      phone: "",
+    },
+    createdAt: "",
     _id: "",
   },
 };
@@ -30,22 +39,10 @@ const orderSlice = createSlice({
     STORE_ORDER(state, action) {
       state.orderHistory = action.payload;
     },
-    CALCULATE_TOTAL_ORDER_AMOUNT(state) {
-      const array: number[] = [];
-      state.orderHistory.products.map(item => {
-        const { eachPrice, quantity } = item;
-        const totalPrice = eachPrice * quantity;
-        return array.push(totalPrice);
-      });
-      const totalAmount = array.reduce((a, b) => {
-        return a + b;
-      }, 0);
-      state.orderHistory.totalPrice = totalAmount;
-    },
   },
 });
 
-export const { STORE_ORDER, CALCULATE_TOTAL_ORDER_AMOUNT } = orderSlice.actions;
+export const { STORE_ORDER } = orderSlice.actions;
 
 export const selectOrderHistory = (state: RootState) =>
   state.orders.orderHistory;

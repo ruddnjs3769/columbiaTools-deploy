@@ -1,30 +1,36 @@
 export type Order = {
-  username: string;
   userEmail: string;
   orderDate: string;
-  orderStatus: OrderStatus;
+  createdAt: string;
   orderAmount: number;
+  orderCount: number;
+  orderStatus: OrderStatus;
   cartItems: CartItem[];
-  billingAddress: Address;
-  shippingAddress: Address;
-  createdAt: Date;
+  billingAddress: BillingAddress;
+  shippingAddress: ShippingAddress;
   _id: string;
 };
 
-export type CartItem = {
-  name: string;
+type CartItem = {
+  id: string;
   imageURL: string;
+  name: string;
   price: number;
   cartQuantity: number;
-  id: string;
-  quantity: number;
 };
 
-type Address = {
+type BillingAddress = {
+  name: string;
+  phone: string;
+  userEmail: string;
+  memo: string;
+};
+
+type ShippingAddress = {
+  name: string;
   postalCode: string;
   city: string;
   line: string;
-  name: string;
   phone: string;
 };
 

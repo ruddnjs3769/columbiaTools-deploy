@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Convention
 
-## Getting Started
+### Naming
 
-First, run the development server:
+<br/>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+#### 파일 Convention
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **tsx, jsx 파일**의 경우 **PascalCase**를 사용합니다.
+  <br/>
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **ts, js 파일**의 경우 **camelCase**를 사용합니다.
+  <br/>
+  <br/>
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+#### 폴더 Convention
 
-## Learn More
+- 폴더 명은 소문자를 사용합니다.
+  <br/>
 
-To learn more about Next.js, take a look at the following resources:
+- 컴포넌트의 경우 **함수명을 파일명과 동일하게** 합니다.
+  <br/>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **app 폴더**의 경우, 페이지를 모아둡니다. **해당 페이지에서만 사용되는 컴포넌트는 해당 폴더에** 넣습니다.
+  <br/>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **app 폴더**의 경우, (**[섹션]**) 폴더를 통해 **그룹핑**합니다. 해당 **섹션에 관련된 페이지**들을 모아둡니다.
+  <br/>
 
-## Deploy on Vercel
+- **Component** 폴더의 경우, **재사용 가능한 컴포넌트**를 모아둡니다.
+  <br/>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **layout** 폴더의 경우, **페이지의 디자인 레이아웃**을 모아둡니다.
+  <br/>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **utils** 폴더의 경우, **재사용 가능한 함수**를 모아둡니다.
+  <br/>
+
+- **model** 폴더의 경우, **재사용 가능한 타입**을 모아둡니다.
+  <br/>
+
+- **redux** 폴더의 경우, **redux 관련 파일**을 모아둡니다.
+  <br/>
+
+- **services** 폴더의 경우, **api 관련 파일**을 모아둡니다.
+  <br/>
+
+- **constants** 폴더의 경우, **상수**를 모아둡니다.

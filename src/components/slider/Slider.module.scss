@@ -13,7 +13,6 @@
     transition: all 0.5s ease;
     flex: 0 0 auto;
     width: calc(100% / var(--slide-per-view));
-    background-color: var(--bg-gray);
   }
 
   .slide img {
@@ -31,12 +30,10 @@
   }
 
   .arrow {
-    border: 2px solid var(--color-primary);
-    border-radius: 50%;
     background: transparent;
     color: var(--color-white);
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 78px;
+    height: 78px;
     cursor: pointer;
     position: absolute;
     top: 50%;

@@ -39,7 +39,11 @@ export default async function Header() {
               <UserBox data={user} />
             </>
           ) : (
-            <NextLink href="/signin">
+            <NextLink
+              href="/signin"
+              className="flex gap-2 items-end hover:underline"
+            >
+              <p className="text-xs">로그인하기</p>
               <FiUser />
             </NextLink>
           )}

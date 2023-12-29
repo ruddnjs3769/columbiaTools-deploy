@@ -1,7 +1,15 @@
 import SideBar from "@/layouts/sideBar/SideBar";
 import RouteComplete from "@/utils/RouteComplete";
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
-const OrderLayout = ({ children }: { children: React.ReactNode }) => {
+const OrderLayout = async ({ children }: { children: React.ReactNode }) => {
+  const session = await getServerSession(authOptions); // 서버에서 session 정보 호출
+  const user = session?.user;
+  if (!user) {
+    redirect("/signin");
+  }
   const links = ["/cart", "/order/order-history"];
   const listStr = ["장바구니", "주문내역"];
   return (

@@ -17,6 +17,7 @@ export default async function SingPage({
   const session = await getServerSession(authOptions); // 서버에서 session 정보 호출
 
   if (session) {
+    alert("이미 로그인 되어있습니다.");
     redirect("/");
   }
 

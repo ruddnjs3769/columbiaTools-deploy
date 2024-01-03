@@ -6,7 +6,6 @@ import RouteComplete from "@/utils/RouteComplete";
 
 export default async function CartPage() {
   const session = await getServerSession(authOptions);
-  console.log(session);
   if (!session) {
     redirect("/signin");
   }

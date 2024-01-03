@@ -18,7 +18,7 @@ export default function Story() {
               <br />
               오프라인 교육을 신청하고 전문가에게 제품 사용법과 팁을 배워보세요.
             </p>
-            <NextLink href="/">
+            <NextLink href="/education">
               <p className="text-xl font-medium flex">
                 오프라인 교육 예약하기
                 <AiOutlineSwapRight className="w-8 h-8" />

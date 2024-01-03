@@ -38,11 +38,7 @@ export default function CheckoutClient() {
 
   const clientkey = process.env.NEXT_PUBLIC_TOSS_CLIENT_KEY;
   const secretkey = process.env.NEXT_PUBLIC_TOSS_SECRET_KEY;
-
-  /*const orderNameCount = cartItems?.length === 1
-      ? cartItems[0].name
-      : cartItems[0].name + " 외 " + (cartItems.length - 1) + "건";*/
-
+  
   const orderNameCount =
     cartItems && cartItems.length
       ? cartItems.length === 1

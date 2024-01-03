@@ -7,16 +7,17 @@ import { CgShoppingCart } from "react-icons/cg";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import UserBox from "@/components/userBox/UserBox";
+import Link from "next/link";
 
 export default async function Header() {
   const session = await getServerSession(authOptions); // 서버에서 session 정보 호출
   const user = session?.user;
   // console.log(user);
-
+  
   return (
-    <div className={styles.container}>
+    <div className={ styles.container }>
       <div className="flex">
-        <Image src={Logo} alt="Logo" width={169} height={70} />
+        <Image src={ Logo } alt="Logo" width={ 169 } height={ 70 } />
         <div className="text-xl flex text-white ml-6 items-center">
           <NextLink href="/" className="mx-6">
             Home
@@ -27,16 +28,17 @@ export default async function Header() {
           <NextLink href="/products/all" className="mx-6">
             Product
           </NextLink>
-          {/*<Link href="/education" className="mx-6">
-          Education
-        </Link>*/}
+          <NextLink href="/education" className="mx-6">
+            Education
+          </NextLink>
+          
         </div>
       </div>
       <div className="text-xl flex text-white ml-6 text-[26px] gap-3 mr-4 items-center">
         <>
-          {user ? (
+          { user ? (
             <>
-              <UserBox data={user} />
+              <UserBox data={ user } />
             </>
           ) : (
             <NextLink
@@ -46,10 +48,10 @@ export default async function Header() {
               <p className="text-xs">로그인하기</p>
               <FiUser />
             </NextLink>
-          )}
+          ) }
         </>
         <>
-          <NextLink href={"/cart"}>
+          <NextLink href={ "/cart" }>
             <CgShoppingCart />
           </NextLink>
         </>

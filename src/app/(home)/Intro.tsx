@@ -28,7 +28,7 @@ export default function Intro() {
           <Image src={main_use2} width={542} height={744} alt="use2" />
         </div>
         <NextLink
-          href={"/product"}
+          href={"/products/all"}
           className="absolute bottom-0 right-[34px] flex"
         >
           <p className="text-lg">전체 상품 보기</p>

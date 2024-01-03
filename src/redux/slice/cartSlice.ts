@@ -113,15 +113,13 @@ const cartSlice = createSlice({
       const newCartItem = state.cartItems.filter(
         item => item.id !== action.payload.id,
       );
-
       state.cartItems = newCartItem;
       toast.success(`${action.payload.name}이 장바구니에서 삭제되었습니다.`);
-
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
     CLEAR_CART: state => {
       state.cartItems = [];
-      toast.success("장바구니가 비었습니다.");
+      // toast.success("장바구니가 비었습니다.");
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
   },
